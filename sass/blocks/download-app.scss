@@ -1,0 +1,108 @@
+.download-app {
+  background-color: #1d2631;
+  margin-top: 462px;
+  padding: 28px 20px 16px 20px;
+  text-align: center;
+}
+
+.download-app__main-link {
+  @include opensans(700,18px,18px);
+  border: 3px solid #fff;
+  border-radius: 50px;
+  color: #fff;
+  display: block;
+  text-decoration: none;
+  padding: 16px 25px;
+
+  &:hover {
+    background-color: #fff;
+    color: $pink;
+  }
+
+  &:active {
+    background-color: #fff;
+    color: rgba($pink,.3);
+  }
+}
+
+.download-app__markets-list {
+  @include no-list-mark;
+  align-items: flex-end;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 24px;
+  margin-top: 30px;
+  padding: 0 20px;
+}
+
+.download-app__market-link {
+  background-repeat: no-repeat;
+  display: block;
+  overflow: hidden;
+}
+
+.download-app__market--apple .download-app__market-link{
+  background-image: url("../img/logo-apple.svg");
+  height: 57px;
+  width: 47px;
+}
+
+.download-app__market--google .download-app__market-link{
+  background-image: url("../img/logo-android.svg");
+  height: 48px;
+  width: 43px;
+}
+
+.download-app__market--microsoft .download-app__market-link{
+  background-image: url("../img/logo-microsoft.svg");
+  height: 42px;
+  width: 44px;
+}
+
+.download-app__market-link-placeholder {
+  visibility: hidden;
+}
+
+.download-app__availability {
+  @include opensans(300,14px,24px);
+  color: #fff;
+}
+
+@media (min-width: 700px) {
+  .download-app {
+    background-color: transparent;
+    margin-top: 0;
+    padding-left: 0;
+    padding-top: 32px;
+    position: relative;
+    width: 300px;
+    z-index: 1;
+  }
+
+  .download-app__availability {
+    font-size: 18px;
+    font-weight: 300;
+  }
+
+  .download-app__markets-list {
+    margin-bottom: 38px;
+    margin-top: 44px;
+    padding-left: 28px;
+    padding-right: 30px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .download-app {
+    padding-top: 50px;
+  }
+
+  .download-app__main-link {
+    font-size: 21px;
+  }
+
+  .download-app__markets-list {
+    margin-bottom: 56px;
+    margin-top: 66px;
+  }
+}

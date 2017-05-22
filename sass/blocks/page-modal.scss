@@ -1,0 +1,141 @@
+.page-modal {
+  background-color: #fff;
+  box-shadow: 0px 7px 15px 0px rgba(0, 1, 1, 0.15);
+  box-sizing: border-box;
+  position: fixed;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-300%);
+  transition: transform .7s ease;
+  width: 100%;
+  z-index: 2;
+
+  &--success {
+    .page-modal__content {
+      margin-bottom: 32px
+    }
+
+    .page-modal__button-wrap {
+      background-color: $lightgray;
+      padding-bottom: 52px;
+      padding-top: 48px;
+    }
+  }
+
+  &--visible {
+    transform: translateY(-50%);
+  }
+}
+
+.page-modal__heading {
+  @include opensans(700,18px,24px);
+  color: #000;
+  margin-bottom: 26px;
+  margin-top: 0;
+  padding: 40px 20px 0 20px;
+}
+
+.page-modal__content {
+  @include opensans(400,14px,24px);
+  padding: 0 20px;
+}
+
+.page-modal__button-wrap {
+  padding: 25px 20px 50px 20px;
+}
+
+.page-modal__button {
+  @include opensans(700,18px,30px);
+  background-color: #2aab6d;
+  border: 0;
+  border-radius: 2px;
+  color: #fff;
+  padding: 16px 0;
+  text-transform: uppercase;
+  width: 100%;
+
+  &:hover {
+    background-color: #1c9b5e;
+  }
+
+  &:active {
+    background-color: #1c9b5e;
+    color: rgba(255,255,255,.3);
+  }
+
+  &:disabled {
+    background-color: $gray;
+    cursor: default;
+
+    &:active {
+      color: #fff;
+    }
+  }
+}
+
+@media (min-width: 700px) {
+  .page-modal {
+    border-radius: 5px;
+    left: 50%;
+    transform: translate(-50%,-300%);
+    width: 460px;
+
+    &--success {
+      .page-modal__heading {
+        margin-bottom: 24px;
+      }
+
+      .page-modal__button-wrap {
+        padding-top: 50px;
+      }
+    }
+
+    &--visible {
+      transform: translate(-50%,-50%);
+    }
+  }
+
+  .page-modal__heading {
+    font-size: 30px;
+    line-height: 40px;
+    margin-bottom: 32px;
+    padding: 34px 80px 0 80px;
+  }
+
+  .page-modal__content {
+    font-size: 18px;
+    line-height: 24px;
+    padding: 0 75px;
+  }
+
+  .page-modal__button-wrap {
+    padding: 20px 80px 53px 80px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .page-modal {
+
+    &--success {
+      width: 780px;
+
+      .page-modal__content {
+        margin-bottom: 37px;
+        padding: 0 160px;
+      }
+
+      .page-modal__button-wrap {
+        padding-left: 160px;
+        padding-right: 160px;
+      }
+    }
+  }
+
+  .page-modal__heading {
+    margin-bottom: 24px;
+  }
+
+  .page-modal__button {
+    cursor: pointer;
+  }
+}

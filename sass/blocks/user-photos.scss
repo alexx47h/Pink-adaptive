@@ -1,0 +1,50 @@
+.user-photos {
+  background-color: #fff;
+  margin-bottom: -20px;
+}
+
+.user-photos__header {
+  padding: 46px 20px 50px 20px;
+  text-align: center;
+}
+
+.user-photos__header-text {
+  @include opensans(400,14px,30px);
+  margin: 0;
+}
+
+@media (min-width: 700px) {
+  .user-photos__wrap {
+    @include no-indents;
+  }
+
+  .user-photos__header {
+    padding: 91px 40px 76px 40px;
+  }
+
+  .user-photos__header-text {
+    font-size: 18px;
+    padding: 0 60px;
+  }
+
+  .user-photos__content {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -10px;
+    padding: 0 40px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .user-photos__wrap {
+    @include deksktop-centerer;
+  }
+
+  .user-photos__header {
+    padding: 90px 130px;
+  }
+
+  .user-photos__content {
+    padding: 0 130px;
+  }
+}

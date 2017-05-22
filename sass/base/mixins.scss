@@ -1,0 +1,65 @@
+@mixin opensans($weight, $size, $height) {
+  font: {
+    family: "Open Sans", Tahoma, sans-serif;;
+    size: $size;
+    weight: $weight;
+  }
+  line-height: $height;
+}
+
+@mixin no-indents {
+  margin: 0;
+  padding: 0;
+}
+
+@mixin no-list-mark {
+  list-style-type: none;
+}
+
+@mixin bg-triangle($height, $type, $footer:false) {
+  @if $type == "primary" {
+    position: relative;
+
+    &::after {
+      background-size: 100% $height;
+      bottom: -$height;
+      content: "";
+      height: $height;
+      left: 0;
+      right: 0;
+      position: absolute;
+    }
+  }
+
+  @else if $type == "secondary" {
+    &::after {
+      background-size: 100% $height;
+      bottom: -$height;
+      height: $height;
+    }
+  }
+
+  @if $footer {
+    &::after {
+      background-image: url("../img/bg-triangle-white-footer.svg");
+      bottom: auto;
+      top: 0;
+    }
+  }
+
+  @else {
+    &::after {
+      background-image: url("../img/bg-triangle-white.svg");
+    }
+  }
+}
+
+@mixin deksktop-centerer {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+@mixin deksktop-centerer-narrow {
+  margin: 0 auto;
+  max-width: 940px;
+}
